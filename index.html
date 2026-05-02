@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kashmir & North India Trip — June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FAF7F2;
+    --deep: #1A1A2E;
+    --gold: #C9A84C;
+    --gold-light: #F0D98B;
+    --kashmiri-red: #8B2635;
+    --pine: #2D5016;
+    --snow: #EAF4FB;
+    --text: #2C2C2C;
+    --muted: #7A7A7A;
+    --card-bg: #FFFFFF;
+    --border: #E8E0D0;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--deep);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(139,38,53,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.2) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(45,80,22,0.3) 0%, transparent 50%),
+      linear-gradient(160deg, #0D1B2A 0%, #1A1A2E 40%, #0A2818 100%);
+    animation: shimmer 8s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer {
+    0% { opacity: 1; }
+    100% { opacity: 0.85; }
+  }
+  .mountain-silhouette {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 3rem 5rem;
+    max-width: 900px;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: #1A1A2E;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    color: #FFFFFF;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  .hero-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .meta-value {
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+
+  /* TIMELINE STRIP */
+  .timeline-strip {
+    background: var(--deep);
+    padding: 2rem 3rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .timeline-strip::-webkit-scrollbar { display: none; }
+  .t-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+    position: relative;
+    cursor: pointer;
+  }
+  .t-node::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    right: -50%;
+    height: 1px;
+    background: rgba(201,168,76,0.3);
+  }
+  .t-node:last-child::after { display: none; }
+  .t-dot {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(201,168,76,0.4);
+    background: var(--deep);
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s;
+  }
+  .t-node.highlight .t-dot {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 12px rgba(201,168,76,0.5);
+  }
+  .t-date {
+    font-size: 10px;
+    color: var(--gold);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+  .t-label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-top: 2px;
+    max-width: 80px;
+  }
+
+  /* MAIN CONTENT */
+  .main { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--deep);
+    margin-bottom: 0.3rem;
+  }
+  .section-title span { color: var(--gold); }
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* JOURNEY CARD (train) */
+  .journey-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .journey-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--gold);
+  }
+  .journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .train-badge {
+    background: var(--deep);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 5px 14px;
+    border-radius: 4px;
+  }
+  .journey-date {
+    font-size: 13px;
+    color: var(--muted);
+    background: var(--cream);
+    padding: 5px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .journey-route {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .station {
+    display: flex;
+    flex-direction: column;
+  }
+  .station-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--deep);
+  }
+  .station-time {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--kashmiri-red);
+  }
+  .station-info {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .route-line {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+  }
+  .route-arrow {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--kashmiri-red) 100%);
+    position: relative;
+    margin: 8px 0;
+  }
+  .route-arrow::after {
+    content: '▶';
+    position: absolute;
+    right: -6px;
+    top: -7px;
+    font-size: 14px;
+    color: var(--kashmiri-red);
+  }
+  .route-duration {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .route-dist {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .journey-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
+  }
+  .detail-chip {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chip-icon { font-size: 13px; }
+
+  /* DAY CARDS */
+  .days-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+  .day-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .day-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+  .day-header {
+    display: flex;
+    align-items: stretch;
+    min-height: 140px;
+  }
+  .day-num-block {
+    background: var(--deep);
+    color: var(--gold);
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    flex-shrink: 0;
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .day-word { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
+  .day-info {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day-date-badge {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--deep);
+    margin-bottom: 0.3rem;
+  }
+  .day-tagline { font-size: 13px; color: var(--muted); font-style: italic; }
+  .day-image-block {
+    width: 200px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .day-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .day-body {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .activity-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .act-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+  .act-icon.gold { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .act-icon.red { background: rgba(139,38,53,0.1); color: var(--kashmiri-red); }
+  .act-icon.green { background: rgba(45,80,22,0.1); color: var(--pine); }
+  .act-icon.blue { background: rgba(30,100,180,0.1); color: #1E64B4; }
+  .act-text strong { font-weight: 500; color: var(--deep); }
+  .tip-box {
+    background: rgba(201,168,76,0.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .tip-box strong { color: var(--gold); }
+
+  /* FREE DAYS */
+  .free-days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .free-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+  .free-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--deep);
+    margin-bottom: 0.3rem;
+  }
+  .free-card-sub { font-size: 12px; color: var(--muted); margin-bottom: 1rem; }
+  .free-highlights { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .free-highlights li { font-size: 13px; color: var(--text); padding-left: 1.2rem; position: relative; }
+  .free-highlights li::before { content: '›'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+
+  /* STATS STRIP */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0 3rem;
+  }
+  .stat {
+    background: var(--card-bg);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--deep);
+    line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); }
+
+  /* PACKING */
+  .packing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .pack-section h4 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .pack-items { list-style: none; }
+  .pack-items li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pack-items li::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .trip-footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 13px;
+  }
+  .trip-footer strong { color: var(--gold); }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 3rem 0;
+  }
+
+  /* SCENIC IMAGE STRIP */
+  .image-strip {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 8px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+    height: 280px;
+  }
+  .image-strip img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.88) saturate(1.1);
+  }
+  .img-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+  }
+  .img-label {
+    position: absolute;
+    bottom: 12px; left: 12px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* responsive */
+  @media (max-width: 640px) {
+    .hero-content { padding: 2rem 1.5rem 3rem; }
+    .hero-title { font-size: 2.5rem; }
+    .day-image-block { display: none; }
+    .image-strip { grid-template-columns: 1fr; height: auto; }
+    .image-strip > *:not(:first-child) { display: none; }
+    .timeline-strip { padding: 1.5rem; }
+    .main { padding: 2rem 1rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <svg class="mountain-silhouette" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,300 L0,200 L80,140 L160,180 L240,100 L340,150 L420,60 L500,120 L580,40 L660,90 L720,30 L780,80 L860,50 L940,110 L1020,70 L1100,130 L1180,90 L1260,150 L1340,100 L1440,160 L1440,300 Z" fill="rgba(10,20,30,0.8)"/>
+    <path d="M0,300 L0,240 L120,190 L200,210 L300,160 L400,190 L480,140 L560,170 L640,120 L720,150 L800,100 L880,140 L960,110 L1060,160 L1160,130 L1260,180 L1360,150 L1440,190 L1440,300 Z" fill="rgba(10,30,20,0.85)"/>
+    <path d="M0,300 L0,270 L200,240 L400,250 L580,220 L700,240 L860,210 L1000,235 L1200,215 L1440,240 L1440,300 Z" fill="rgba(26,26,46,0.9)"/>
+    <!-- Snow caps -->
+    <path d="M580,40 L560,70 L600,65 Z" fill="rgba(255,255,255,0.4)"/>
+    <path d="M720,30 L700,58 L740,54 Z" fill="rgba(255,255,255,0.5)"/>
+    <path d="M860,50 L840,78 L882,74 Z" fill="rgba(255,255,255,0.35)"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-tag">✦ Personal Trip Itinerary · June 2026</div>
+    <h1 class="hero-title">A Journey to<br><em>Paradise on Earth</em></h1>
+    <p class="hero-subtitle">From the plains of Kerala to the snow-capped peaks of Kashmir — an unforgettable 12-day odyssey.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Departs</span>
+        <span class="meta-value">June 16, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Returns</span>
+        <span class="meta-value">June 29, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Highlights</span>
+        <span class="meta-value">Kashmir · Jammu · Delhi</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Mode</span>
+        <span class="meta-value">Train + Road</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE STRIP -->
+<div class="timeline-strip">
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 16</div><div class="t-label">Depart Palakkad</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 17</div><div class="t-label">En route</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 18</div><div class="t-label">Reach Delhi NZM</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 19</div><div class="t-label">Reach Jammu</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 19</div><div class="t-label">Drive to Srinagar</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 20</div><div class="t-label">Sonamarg</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 21</div><div class="t-label">Gulmarg</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 22</div><div class="t-label">Pahalgam</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 23</div><div class="t-label">Srinagar City</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 24</div><div class="t-label">Return to Jammu</div></div>
+  <div class="t-node"><div class="t-dot"></div><div class="t-date">Jun 25–26</div><div class="t-label">Free Explore</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 27</div><div class="t-label">Return Train</div></div>
+  <div class="t-node highlight"><div class="t-dot"></div><div class="t-date">Jun 29</div><div class="t-label">Home Palakkad</div></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat"><div class="stat-val">12</div><div class="stat-label">Travel Days</div></div>
+    <div class="stat"><div class="stat-val">~6,000</div><div class="stat-label">km by Rail</div></div>
+    <div class="stat"><div class="stat-val">5</div><div class="stat-label">Kashmir Days</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-label">Hill Excursions</div></div>
+    <div class="stat"><div class="stat-val">2</div><div class="stat-label">Free Days</div></div>
+    <div class="stat"><div class="stat-val">∞</div><div class="stat-label">Memories</div></div>
+  </div>
+
+  <!-- PHASE 1: TRAIN TO DELHI -->
+  <h2 class="section-title">Phase 1 — <span>The Great Rail Journey</span></h2>
+  <p class="section-sub">June 16–18 · Palakkad to Hazrat Nizamuddin</p>
+
+  <div class="journey-card">
+    <div class="journey-header">
+      <div class="train-badge">🚂 TRAIN NO. 12643</div>
+      <div class="journey-date">📅 June 16 (Depart) → June 18 (Arrive)</div>
+    </div>
+    <p style="font-size:1.05rem; font-weight:500; color:var(--deep); margin-bottom:1.2rem;">Swarna Jayanti Superfast Express</p>
+    <div class="journey-route">
+      <div class="station">
+        <div class="station-name">Palakkad Jn</div>
+        <div class="station-time">21:40</div>
+        <div class="station-info">PGT · June 16</div>
+      </div>
+      <div class="route-line">
+        <div class="route-arrow"></div>
+        <div class="route-duration">~45 hrs journey</div>
+        <div class="route-dist">≈ 2,656 km</div>
+      </div>
+      <div class="station">
+        <div class="station-name">Hazrat Nizamuddin</div>
+        <div class="station-time">17:50</div>
+        <div class="station-info">NZM · June 18</div>
+      </div>
+    </div>
+    <div class="journey-details">
+      <div class="detail-chip"><span class="chip-icon">🛏️</span> Sleeper / 3AC / 2AC</div>
+      <div class="detail-chip"><span class="chip-icon">🍽️</span> Pantry Car on board</div>
+      <div class="detail-chip"><span class="chip-icon">⚡</span> LHB Coaches</div>
+      <div class="detail-chip"><span class="chip-icon">🛤️</span> 32+ stations en route</div>
+      <div class="detail-chip"><span class="chip-icon">📍</span> Via Coimbatore · Erode · Salem · Dharmavaram · Guntakal · Renigunta · Warangal · Nagpur · Bhopal · Agra</div>
+    </div>
+    <div class="tip-box">
+      <strong>💡 Pro tip:</strong> The train passes scenic Deccan plateau and Vindhya ranges. Carry snacks, a power bank, and light woolens for the AC coaches. E-catering available at major stops — order via IRCTC app.
+    </div>
+  </div>
+
+  <!-- NZM LAYOVER -->
+  <div class="journey-card" style="border-left: 5px solid var(--kashmiri-red);">
+    <div class="journey-header">
+      <div class="train-badge" style="background:var(--kashmiri-red); color:#fff;">🏙️ DELHI LAYOVER</div>
+      <div class="journey-date">📅 June 18 Evening</div>
+    </div>
+    <p style="font-size:1rem; color:var(--text); margin-bottom:0.8rem;">Arrive Hazrat Nizamuddin at ~17:50. You'll have the evening to freshen up near the station before your onward journey to Jammu the next morning.</p>
+    <div class="journey-details">
+      <div class="detail-chip"><span class="chip-icon">🏨</span> Stay near NZM / Sarai Kale Khan</div>
+      <div class="detail-chip"><span class="chip-icon">🍛</span> Try Old Delhi food at Nizamuddin Dargah area</div>
+      <div class="detail-chip"><span class="chip-icon">🕌</span> Humayun's Tomb is 10 min away</div>
+    </div>
+  </div>
+
+  <!-- TRAIN TO JAMMU -->
+  <div class="journey-card">
+    <div class="journey-header">
+      <div class="train-badge">🚂 JAMMU BOUND</div>
+      <div class="journey-date">📅 June 18 Night → June 19 Morning</div>
+    </div>
+    <p style="font-size:1.05rem; font-weight:500; color:var(--deep); margin-bottom:1.2rem;">Delhi → Jammu Tawi</p>
+    <div class="journey-route">
+      <div class="station">
+        <div class="station-name">Hazrat Nizamuddin</div>
+        <div class="station-time">Night</div>
+        <div class="station-info">NZM · June 18</div>
+      </div>
+      <div class="route-line">
+        <div class="route-arrow"></div>
+        <div class="route-duration">~9–11 hrs</div>
+        <div class="route-dist">≈ 590 km</div>
+      </div>
+      <div class="station">
+        <div class="station-name">Jammu Tawi</div>
+        <div class="station-time">Morning</div>
+        <div class="station-info">JAT · June 19</div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <strong>💡 Multiple options:</strong> Trains like Jammu Mail, Rajdhani or Swaraj Express run this route. Book in advance — June is peak Kashmir season.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- PHASE 2: KASHMIR -->
+  <h2 class="section-title">Phase 2 — <span>Kashmir Calling</span></h2>
+  <p class="section-sub">June 19–24 · The Full Package Tour</p>
+
+  <!-- Image strip with CSS backgrounds -->
+  <div class="image-strip">
+    <div class="img-placeholder" style="background: linear-gradient(135deg, #1a4a2e 0%, #2d6a4f 40%, #74c69d 100%); position:relative;">
+      <div class="img-label">📍 Dal Lake, Srinagar</div>
+    </div>
+    <div class="img-placeholder" style="background: linear-gradient(135deg, #d4e9e2 0%, #a8d8ca 40%, #52b788 100%); position:relative;">
+      <div class="img-label">⛰️ Sonamarg</div>
+    </div>
+    <div class="img-placeholder" style="background: linear-gradient(135deg, #caf0f8 0%, #90e0ef 40%, #00b4d8 100%); position:relative;">
+      <div class="img-label">🌿 Pahalgam</div>
+    </div>
+  </div>
+  <p style="font-size:11px; color:var(--muted); text-align:center; margin-top:-1rem; margin-bottom:2rem;">Dal Lake · Sonamarg Valley · Betaab Valley, Pahalgam</p>
+
+  <div class="days-grid">
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">1</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 19 · Thursday</div>
+            <div class="day-title">Arrival & Check-in to Paradise</div>
+            <div class="day-tagline">Jammu to Srinagar · The Scenic Mountain Drive</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Pickup from Station</span>
+            <span style="background:rgba(139,38,53,0.08);color:var(--kashmiri-red);font-size:11px;padding:3px 10px;border-radius:10px;">~6–7 hr drive</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon gold">🚐</div>
+            <div class="act-text"><strong>Pickup from Jammu Railway Station</strong> — Your tour operator's cab/tempo-traveller will greet you at the platform. Freshen up quickly!</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon blue">🛣️</div>
+            <div class="act-text"><strong>NH 44 — The Jammu-Srinagar Highway</strong> — Drive through the breathtaking Banihal Pass (altitude ~2,200m), the famous Jawahar Tunnel (2.85 km), and the lush Jhelum valley. Patnitop stopover recommended for tea and views.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🏔️</div>
+            <div class="act-text"><strong>Patnitop</strong> — A beautiful hilltop meadow at 2,024m. Enjoy a short walk, mountain air, and Kashmiri noon chai (pink salted tea with bread).</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🏨</div>
+            <div class="act-text"><strong>Arrive Srinagar & Check-in</strong> — Settle into your hotel. Evening at leisure — stroll along Boulevard Road beside the shimmering Dal Lake. Watch the shikara boats glide in the sunset light.</div>
+          </li>
+        </ul>
+        <div class="tip-box">
+          <strong>🌸 Tonight:</strong> Try Wazwan (traditional Kashmiri multi-course feast) at your hotel or a local restaurant. Don't miss Rogan Josh and Gushtaba!
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">2</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 20 · Friday</div>
+            <div class="day-title">Sonamarg — Gold Meadow of the Himalayas</div>
+            <div class="day-tagline">Day excursion • ~87 km from Srinagar</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Altitude 2,740m</span>
+            <span style="background:rgba(45,80,22,0.1);color:var(--pine);font-size:11px;padding:3px 10px;border-radius:10px;">Return to Srinagar</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon gold">⏰</div>
+            <div class="act-text"><strong>Early departure ~7:00 AM</strong> — Beat the tourist rush. The drive follows the Sind River gorge through pine forests and alpine meadows — magical in the morning mist.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon blue">🏔️</div>
+            <div class="act-text"><strong>Thajiwas Glacier</strong> — The highlight of Sonamarg! Hire a pony or trek (~3 km) to this ancient glacier. Touch real glacier ice, photograph the turquoise glacial stream. A surreal experience at any age.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🌊</div>
+            <div class="act-text"><strong>Nilagrad River</strong> — On the way back, stop at this red mineral water stream — famous for its supposedly medicinal waters. Locals swear by a sip!</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🌅</div>
+            <div class="act-text"><strong>Return to Srinagar by evening</strong> — Relax on your houseboat balcony if staying on Dal Lake. Watch the famous Srinagar sunset paint the water gold.</div>
+          </li>
+        </ul>
+        <div class="tip-box">
+          <strong>❄️ What to wear:</strong> June is warm in Srinagar (18–25°C) but Sonamarg can be 8–14°C. Carry a warm jacket, sunscreen, and sunglasses — glacier UV is intense!
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">3</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 21 · Saturday</div>
+            <div class="day-title">Gulmarg — Meadow of Flowers</div>
+            <div class="day-tagline">World's highest gondola ride • ~51 km from Srinagar</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Altitude 2,650m</span>
+            <span style="background:rgba(30,100,180,0.1);color:#1E64B4;font-size:11px;padding:3px 10px;border-radius:10px;">Gondola to 4,200m!</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon gold">🚡</div>
+            <div class="act-text"><strong>Gulmarg Gondola (Phase I & II)</strong> — One of the world's highest and longest cable car systems. Phase I reaches Kongdoori (3,100m) — views of Nanga Parbat (8,126m)! Phase II goes to Apharwat Peak (4,200m) — you'll see snow in June. Book tickets online to avoid queues.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon blue">⛷️</div>
+            <div class="act-text"><strong>Apharwat Peak (if fit!)</strong> — At 4,200m, you're above the treeline in a lunar snow landscape. June means large snowfields — you can walk/play in snow. Altitude caution: take it slow, hydrate well.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🌺</div>
+            <div class="act-text"><strong>Gulmarg Meadow Walk</strong> — The bowl-shaped meadow is carpeted with wildflowers in June — buttercups, daisies, wild roses. Golf course here is one of the world's highest! Take a pony ride around the meadow.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🕌</div>
+            <div class="act-text"><strong>St. Mary's Church & Maharani Temple</strong> — Colonial-era stone church and hilltop temple with panoramic views before heading back to Srinagar.</div>
+          </li>
+        </ul>
+        <div class="tip-box">
+          <strong>📷 Photo ops:</strong> The view of Mt. Nanga Parbat from the gondola on a clear day is life-changing. Early morning departures get the clearest skies.
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">4</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 22 · Sunday</div>
+            <div class="day-title">Pahalgam — Valley of Shepherds</div>
+            <div class="day-tagline">Betaab Valley · Aru Valley · Baisaran • ~96 km</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Altitude 2,130m</span>
+            <span style="background:rgba(45,80,22,0.1);color:var(--pine);font-size:11px;padding:3px 10px;border-radius:10px;">Lidder River</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon blue">🌊</div>
+            <div class="act-text"><strong>Betaab Valley</strong> — Named after the 1983 Bollywood classic filmed here. Crystal-clear Lidder River rushing through deodar forests with snow-capped peaks — arguably Kashmir's most photogenic valley. Perfectly walkable.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🐄</div>
+            <div class="act-text"><strong>Aru Valley</strong> — A serene village 12 km from Pahalgam, accessible only by local jeep. Traditional Bakarwal shepherd huts, yaks grazing, wildflower meadows. Less touristy — more authentic.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon gold">🏕️</div>
+            <div class="act-text"><strong>Baisaran (Mini Switzerland)</strong> — Pine-fringed alpine meadow accessible only by pony/foot. 360° mountain views, no vehicles. Pure bliss. Many say it's their single favourite spot in all of Kashmir.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🎣</div>
+            <div class="act-text"><strong>Trout Fishing on Lidder</strong> — Pahalgam is famous for brown trout. Try licensed fishing for an hour — many operators offer gear rental along the river bank.</div>
+          </li>
+        </ul>
+        <div class="tip-box">
+          <strong>🕌 Note:</strong> June is peak Amarnath Yatra season — Pahalgam is the base camp. Expect crowds on the main road but side valleys remain peaceful. Book local jeeps in advance.
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">5</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 23 · Monday</div>
+            <div class="day-title">Srinagar — The Jewel City</div>
+            <div class="day-tagline">Dal Lake · Mughal Gardens · Old City & Craft Bazaars</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Shikara Ride</span>
+            <span style="background:rgba(139,38,53,0.08);color:var(--kashmiri-red);font-size:11px;padding:3px 10px;border-radius:10px;">Local Sightseeing</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon gold">🛶</div>
+            <div class="act-text"><strong>Shikara Ride on Dal Lake (Sunrise)</strong> — Hire a shikara at dawn (~₹1,200–1,500/hr). Glide through lotus beds, floating vegetable markets, and past ornate houseboats as the city stirs to life. Truly magical.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🌳</div>
+            <div class="act-text"><strong>Mughal Gardens</strong> — Visit Shalimar Bagh, Nishat Bagh, and Chashme Shahi — UNESCO-listed terraced gardens built by Mughal emperors along the Dal lakefront. Chinar trees, fountains, and mountain backdrops.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon blue">🕌</div>
+            <div class="act-text"><strong>Jama Masjid & Old City</strong> — The grand 14th-century mosque with 378 wooden pillars. Wander the narrow lanes of the old city (Nowhatta, Maharaj Gunj) for authentic Kashmiri crafts.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🛍️</div>
+            <div class="act-text"><strong>Shopping!</strong> — Buy pashmina shawls, hand-knotted carpets, walnut wood carvings, saffron, Kashmiri kahwa tea, paper mache boxes. Go to Lal Chowk and Polo View market. Bargain warmly but fairly.</div>
+          </li>
+        </ul>
+        <div class="tip-box">
+          <strong>🍵 Must try today:</strong> Harisa (slow-cooked meat porridge, available only in mornings), Sheermal (saffron flatbread), and Kehwa tea at a traditional Srinagar café.
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card">
+      <div class="day-header">
+        <div class="day-num-block">
+          <div class="day-num">6</div>
+          <div class="day-word">Day</div>
+        </div>
+        <div class="day-info">
+          <div>
+            <div class="day-date-badge">June 24 · Tuesday</div>
+            <div class="day-title">Farewell Kashmir · Drive to Jammu</div>
+            <div class="day-tagline">Check-out & return journey southward</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:rgba(201,168,76,0.12);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:10px;">Check-out by 10 AM</span>
+            <span style="background:rgba(139,38,53,0.08);color:var(--kashmiri-red);font-size:11px;padding:3px 10px;border-radius:10px;">~6 hr drive</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-body">
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="act-icon gold">🌅</div>
+            <div class="act-text"><strong>Last morning on Dal Lake</strong> — Watch the dawn from your balcony. A quiet cup of kahwa and a final sunrise over the water — memories to last a lifetime.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon blue">🚐</div>
+            <div class="act-text"><strong>Drive back to Jammu Tawi</strong> — Reverse the scenic NH-44. Stop at Banihal or Patnitop for lunch. Arrive Jammu by early evening.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon green">🛕</div>
+            <div class="act-text"><strong>Vaishno Devi Darshan (optional)</strong> — If energy permits, the famous Mata Vaishno Devi shrine is 40 km from Jammu. Helicopter service (Katra to Sanjichhatt) makes it manageable.</div>
+          </li>
+          <li class="activity-item">
+            <div class="act-icon red">🏨</div>
+            <div class="act-text"><strong>Overnight in Jammu</strong> — Rest at a hotel near Jammu Tawi station. Explore Raghunath Temple and the famous Gulab Bhavan market.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- FREE DAYS -->
+  <h2 class="section-title">Phase 3 — <span>Your Free Days</span></h2>
+  <p class="section-sub">June 25–26 · Explore Punjab, Delhi or Agra — your call!</p>
+
+  <div class="free-days-grid">
+    <div class="free-card">
+      <div class="free-card-title">🏯 Delhi — City of Empires</div>
+      <div class="free-card-sub">~590 km from Jammu · Direct trains</div>
+      <ul class="free-highlights">
+        <li>Red Fort & Chandni Chowk breakfast</li>
+        <li>Qutub Minar & Humayun's Tomb</li>
+        <li>India Gate evening walk</li>
+        <li>Lodhi Art District (street art + coffee)</li>
+        <li>Connaught Place & Janpath shopping</li>
+        <li>Metro ride across the capital</li>
+      </ul>
+    </div>
+    <div class="free-card">
+      <div class="free-card-title">🕌 Agra — The Taj & Beyond</div>
+      <div class="free-card-sub">~2 hrs from Delhi by Shatabdi</div>
+      <ul class="free-highlights">
+        <li>Taj Mahal at dawn (most magical time)</li>
+        <li>Agra Fort — Mughal grandeur</li>
+        <li>Mehtab Bagh — Taj from the other side</li>
+        <li>Fatehpur Sikri (40 km day trip)</li>
+        <li>Agra petha (sweet) and leather shopping</li>
+      </ul>
+    </div>
+    <div class="free-card">
+      <div class="free-card-title">🌾 Punjab — Heart & Soul</div>
+      <div class="free-card-sub">Amritsar is 6 hrs from Jammu</div>
+      <ul class="free-highlights">
+        <li>Golden Temple — most serene place on Earth</li>
+        <li>Wagah Border Retreat Ceremony (sunset)</li>
+        <li>Jallianwala Bagh memorial</li>
+        <li>Amritsari kulcha & lassi breakfast</li>
+        <li>Lawrence Road street food tour</li>
+        <li>Partition Museum (powerful & moving)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box" style="margin-bottom:2rem;">
+    <strong>✈️ Suggestion:</strong> June 25 — Jammu to Amritsar by train (Jammu-Amritsar Express, ~5–6 hrs). June 26 — Amritsar to Delhi, overnight journey/sleeper, reach Delhi morning of June 27 in time for your return train from NZM.
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- RETURN JOURNEY -->
+  <h2 class="section-title">Phase 4 — <span>Homeward Bound</span></h2>
+  <p class="section-sub">June 27–29 · Hazrat Nizamuddin to Palakkad</p>
+
+  <div class="journey-card">
+    <div class="journey-header">
+      <div class="train-badge">🚂 TRAIN NO. 12618</div>
+      <div class="journey-date">📅 June 27 (Depart) → June 29 (Arrive)</div>
+    </div>
+    <p style="font-size:1.05rem; font-weight:500; color:var(--deep); margin-bottom:1.2rem;">Mangala Lakshadweep Superfast Express</p>
+    <div class="journey-route">
+      <div class="station">
+        <div class="station-name">Hazrat Nizamuddin</div>
+        <div class="station-time">05:35</div>
+        <div class="station-info">NZM · June 27</div>
+      </div>
+      <div class="route-line">
+        <div class="route-arrow"></div>
+        <div class="route-duration">~50 hrs journey</div>
+        <div class="route-dist">≈ 2,761 km</div>
+      </div>
+      <div class="station">
+        <div class="station-name">Palakkad Jn</div>
+        <div class="station-time">~Afternoon</div>
+        <div class="station-info">PGT · June 29</div>
+      </div>
+    </div>
+    <div class="journey-details">
+      <div class="detail-chip"><span class="chip-icon">📅</span> Runs Daily</div>
+      <div class="detail-chip"><span class="chip-icon">🛏️</span> 1AC / 2AC / 3AC / Sleeper</div>
+      <div class="detail-chip"><span class="chip-icon">🛤️</span> Via Agra · Bhopal · Nagpur · Pune · Goa (Konkan Route)</div>
+      <div class="detail-chip"><span class="chip-icon">🏖️</span> Passes scenic Konkan coastline</div>
+    </div>
+    <div class="tip-box">
+      <strong>🌊 Bonus:</strong> Train 12618 takes the gorgeous Konkan Railway route — dramatic sea cliffs, tunnels, waterfalls (post-monsoon) and emerald green countryside. A beautiful send-off for your journey home.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- PACKING LIST -->
+  <h2 class="section-title">Essential <span>Packing List</span></h2>
+  <p class="section-sub">June in Kashmir — warm days, cold nights, and everywhere in between</p>
+
+  <div class="packing-grid">
+    <div class="pack-section">
+      <h4>Clothing</h4>
+      <ul class="pack-items">
+        <li>Warm jacket / fleece (for Sonamarg/Gulmarg)</li>
+        <li>Light casuals for Srinagar city</li>
+        <li>Trekking shoes + sandals</li>
+        <li>Rain poncho / light waterproof</li>
+        <li>Sunglasses & sun hat</li>
+        <li>Warm socks (2–3 pairs)</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <h4>Documents & Finance</h4>
+      <ul class="pack-items">
+        <li>Original Aadhaar / Voter ID</li>
+        <li>All train tickets (printout + digital)</li>
+        <li>Tour operator contact + voucher</li>
+        <li>Cash in multiple small denominations</li>
+        <li>UPI apps (Paytm, PhonePe)</li>
+        <li>Emergency contacts written down</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <h4>Health & Safety</h4>
+      <ul class="pack-items">
+        <li>High SPF sunscreen (SPF 50+)</li>
+        <li>Altitude sickness tablets (Diamox)</li>
+        <li>Lip balm & moisturiser</li>
+        <li>Basic first aid kit</li>
+        <li>Any personal medications</li>
+        <li>Electrolyte sachets</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <h4>Train Essentials</h4>
+      <ul class="pack-items">
+        <li>Power bank (20,000 mAh)</li>
+        <li>Ear plugs & eye mask</li>
+        <li>Travel pillow / inflatable</li>
+        <li>Dry snacks & biscuits</li>
+        <li>Reusable water bottle</li>
+        <li>Small padlock for luggage</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- QUICK REFERENCE -->
+  <h2 class="section-title">Quick <span>Reference Summary</span></h2>
+  <p class="section-sub">All dates and logistics at a glance</p>
+
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead>
+        <tr style="background:var(--deep);">
+          <th style="text-align:left;padding:12px 16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:500;">Date</th>
+          <th style="text-align:left;padding:12px 16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:500;">Day</th>
+          <th style="text-align:left;padding:12px 16px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:500;">Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 16</td><td style="padding:10px 16px;font-size:13px;">Monday</td><td style="padding:10px 16px;font-size:13px;">🚂 Depart Palakkad at 21:40 · Train 12643</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 17</td><td style="padding:10px 16px;font-size:13px;">Tuesday</td><td style="padding:10px 16px;font-size:13px;">🛤️ In transit — Deccan Plateau, Central India</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 18</td><td style="padding:10px 16px;font-size:13px;">Wednesday</td><td style="padding:10px 16px;font-size:13px;">🏙️ Arrive NZM ~17:50 · Evening in Delhi · Night train to Jammu</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 19</td><td style="padding:10px 16px;font-size:13px;">Thursday</td><td style="padding:10px 16px;font-size:13px;">🚐 Arrive Jammu · Drive to Srinagar · Check-in hotel</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 20</td><td style="padding:10px 16px;font-size:13px;">Friday</td><td style="padding:10px 16px;font-size:13px;">⛰️ Sonamarg — Thajiwas Glacier excursion</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 21</td><td style="padding:10px 16px;font-size:13px;">Saturday</td><td style="padding:10px 16px;font-size:13px;">🚡 Gulmarg — Gondola ride to Apharwat Peak</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 22</td><td style="padding:10px 16px;font-size:13px;">Sunday</td><td style="padding:10px 16px;font-size:13px;">🌿 Pahalgam — Betaab Valley, Aru, Baisaran</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 23</td><td style="padding:10px 16px;font-size:13px;">Monday</td><td style="padding:10px 16px;font-size:13px;">🛶 Srinagar — Dal Lake, Mughal Gardens, Bazaars</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 24</td><td style="padding:10px 16px;font-size:13px;">Tuesday</td><td style="padding:10px 16px;font-size:13px;">🚐 Check-out · Drive back to Jammu Tawi</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 25</td><td style="padding:10px 16px;font-size:13px;">Wednesday</td><td style="padding:10px 16px;font-size:13px;">🌾 Free Day — Punjab / Delhi / Agra</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 26</td><td style="padding:10px 16px;font-size:13px;">Thursday</td><td style="padding:10px 16px;font-size:13px;">🏯 Free Day — Explore & make way to Delhi NZM</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 27</td><td style="padding:10px 16px;font-size:13px;">Friday</td><td style="padding:10px 16px;font-size:13px;">🚂 Depart NZM 05:35 · Train 12618 · Mangala Lakshadweep Express</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 28</td><td style="padding:10px 16px;font-size:13px;">Saturday</td><td style="padding:10px 16px;font-size:13px;">🛤️ In transit — Konkan coast, Goa corridor</td></tr>
+        <tr><td style="padding:10px 16px;font-size:13px;color:var(--gold);font-weight:500;">Jun 29</td><td style="padding:10px 16px;font-size:13px;">Sunday</td><td style="padding:10px 16px;font-size:13px;">🏠 Arrive Palakkad — Home sweet home!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="trip-footer">
+  <p style="margin-bottom:0.5rem;">Prepared with ❤️ for your Kashmir adventure</p>
+  <p><strong>June 16–29, 2026</strong> · Palakkad → Delhi → Jammu → Kashmir → Delhi → Palakkad</p>
+  <p style="margin-top:1rem;font-size:11px;opacity:0.5;">Train details based on scheduled timetables — verify current status on IRCTC / NTES before travel</p>
+</div>
+
+</body>
+</html>
